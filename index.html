@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>重庆三日红色主题活动</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
@@ -35,34 +31,8 @@
             position: relative;
         }
         
-        .header::before {
-            content: "★";
-            position: absolute;
-            top: 20px;
-            left: 30px;
-            font-size: 24px;
-            opacity: 0.5;
-        }
-        
-        .header::after {
-            content: "★";
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 24px;
-            opacity: 0.5;
-        }
-        
-        .header h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-        
-        .header p {
-            font-size: 16px;
-            opacity: 0.9;
-        }
+        .header h1 { font-size: 32px; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.9; }
         
         .tag {
             display: inline-block;
@@ -73,74 +43,22 @@
             margin-top: 15px;
         }
         
-        .day {
-            padding: 30px;
-            border-bottom: 1px dashed #ffcccc;
-        }
+        .day { padding: 30px; border-bottom: 1px dashed #ffcccc; }
+        .day:last-child { border-bottom: none; }
         
-        .day:last-child {
-            border-bottom: none;
-        }
-        
-        .day-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+        .day-header { display: flex; align-items: center; margin-bottom: 20px; }
         
         .day-number {
-            width: 50px;
-            height: 50px;
+            width: 50px; height: 50px;
             background: linear-gradient(135deg, #dc3545, #c92a2a);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
-            margin-right: 15px;
-            flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 20px; font-weight: bold;
+            margin-right: 15px; flex-shrink: 0;
         }
         
-        .day-title {
-            flex: 1;
-        }
-        
-        .day-title h2 {
-            color: #dc3545;
-            font-size: 22px;
-        }
-        
-        .day-title p {
-            color: #888;
-            font-size: 14px;
-            margin-top: 4px;
-        }
-        
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin: 20px 0;
-        }
-        
-        .image-grid img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 16px;
-            transition: transform 0.3s ease;
-        }
-        
-        .image-grid img:hover {
-            transform: scale(1.02);
-        }
-        
-        .image-grid .full-width {
-            grid-column: 1 / -1;
-            height: 220px;
-        }
+        .day-title h2 { color: #dc3545; font-size: 22px; }
+        .day-title p { color: #888; font-size: 14px; margin-top: 4px; }
         
         .spot {
             background: #fff5f5;
@@ -148,94 +66,73 @@
             padding: 20px;
             margin: 15px 0;
             border-left: 4px solid #dc3545;
+            position: relative;
+            padding-left: 140px;
         }
         
-        .spot h3 {
-            color: #c92a2a;
-            font-size: 18px;
-            margin-bottom: 8px;
+        .spot-img {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            width: 110px;
+            height: 80px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+        
+        .spot h3 { color: #c92a2a; font-size: 18px; margin-bottom: 8px; }
+        .spot p { color: #666; line-height: 1.8; font-size: 15px; }
+        
+        .hero-section {
+            height: 200px;
+            background: linear-gradient(135deg, #dc3545 0%, #ff6b6b 50%, #dc3545 100%);
             display: flex;
             align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
         }
         
-        .spot h3::before {
-            content: "📍";
-            margin-right: 8px;
+        .hero-section::before {
+            content: "🇨🇳";
+            font-size: 80px;
+            opacity: 0.3;
         }
         
-        .spot p {
-            color: #666;
-            line-height: 1.8;
-            font-size: 15px;
+        .hero-section::after {
+            content: "★";
+            position: absolute;
+            font-size: 40px;
+            color: rgba(255,255,255,0.2);
         }
+        
+        .spot-img-1 { background: linear-gradient(45deg, #8B0000, #DC143C); }
+        .spot-img-2 { background: linear-gradient(45deg, #2F4F4F, #696969); }
+        .spot-img-3 { background: linear-gradient(45deg, #DAA520, #F4A460); }
+        .spot-img-4 { background: linear-gradient(45deg, #4B0082, #8A2BE2); }
+        .spot-img-5 { background: linear-gradient(45deg, #006400, #228B22); }
+        .spot-img-6 { background: linear-gradient(45deg, #8B4513, #D2691E); }
+        .spot-img-7 { background: linear-gradient(45deg, #B22222, #FF4500); }
+        .spot-img-8 { background: linear-gradient(45deg, #191970, #4169E1); }
         
         .tips {
             background: linear-gradient(135deg, #fff5f5, #ffe4e4);
             padding: 25px 30px;
         }
         
-        .tips h3 {
-            color: #dc3545;
-            font-size: 18px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
+        .tips h3 { color: #dc3545; font-size: 18px; margin-bottom: 15px; }
         
-        .tips h3::before {
-            content: "💡";
-            margin-right: 8px;
-        }
+        .tips ul { list-style: none; }
+        .tips li { color: #666; padding: 8px 0; padding-left: 20px; position: relative; }
+        .tips li::before { content: "✓"; position: absolute; left: 0; color: #dc3545; font-weight: bold; }
         
-        .tips ul {
-            list-style: none;
-        }
-        
-        .tips li {
-            color: #666;
-            padding: 8px 0;
-            padding-left: 20px;
-            position: relative;
-        }
-        
-        .tips li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #dc3545;
-            font-weight: bold;
-        }
-        
-        .footer {
-            background: #dc3545;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .footer p {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-        
-        .hero-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
+        .footer { background: #dc3545; color: white; text-align: center; padding: 20px; }
+        .footer p { font-size: 14px; opacity: 0.9; }
         
         @media (max-width: 600px) {
-            .image-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .header h1 {
-                font-size: 24px;
-            }
-            
-            .day {
-                padding: 20px;
-            }
+            .spot { padding-left: 15px; padding-top: 100px; }
+            .spot-img { width: 100%; height: 80px; left: 15px; top: 15px; }
+            .header h1 { font-size: 24px; }
         }
     </style>
 </head>
@@ -247,7 +144,7 @@
             <span class="tag">红色旅游｜重庆｜党史教育</span>
         </div>
         
-        <img src="https://images.unsplash.com/photo-1569658433743-45d0a7e4e3c4?w=800&h=400&fit=crop" alt="重庆夜景" class="hero-image">
+        <div class="hero-section"></div>
         
         <div class="day">
             <div class="day-header">
@@ -258,23 +155,21 @@
                 </div>
             </div>
             
-            <div class="image-grid">
-                <img src="https://picsum.photos/id/1015/400/300" alt="红岩革命纪念馆">
-                <img src="https://picsum.photos/id/1016/400/300" alt="重庆江景">
-            </div>
-            
             <div class="spot">
-                <h3>红岩革命纪念馆</h3>
+                <div class="spot-img spot-img-1"></div>
+                <h3>📍 红岩革命纪念馆</h3>
                 <p>参观红岩革命历史博物馆，了解以周恩来为代表的南方局老一辈无产阶级革命家创造的"红岩精神"，感受革命先烈的爱国情怀和坚定信念。</p>
             </div>
             
             <div class="spot">
-                <h3>渣子洞、白公馆</h3>
+                <div class="spot-img spot-img-2"></div>
+                <h3>📍 渣子洞、白公馆</h3>
                 <p>实地探访革命先烈被囚禁的地方，缅怀江姐、小萝卜头等革命烈士的英勇事迹，接受深刻的爱国主义教育。</p>
             </div>
             
             <div class="spot">
-                <h3>中山四路</h3>
+                <div class="spot-img spot-img-3"></div>
+                <h3>📍 中山四路</h3>
                 <p>漫步"重庆最美街道"，感受抗战时期的历史风云，参观周公馆、桂园等红色遗迹。</p>
             </div>
         </div>
@@ -288,23 +183,21 @@
                 </div>
             </div>
             
-            <div class="image-grid">
-                <img src="https://picsum.photos/id/1018/400/300" alt="人民解放纪念碑">
-                <img src="https://picsum.photos/id/1019/400/300" alt="长江索道">
-            </div>
-            
             <div class="spot">
-                <h3>人民解放纪念碑</h3>
+                <div class="spot-img spot-img-4"></div>
+                <h3>📍 人民解放纪念碑</h3>
                 <p>瞻仰重庆标志性建筑，了解抗日战争和解放战争时期的历史，缅怀为民族解放事业牺牲的英雄们。</p>
             </div>
             
             <div class="spot">
-                <h3>三峡博物馆</h3>
+                <div class="spot-img spot-img-5"></div>
+                <h3>📍 三峡博物馆</h3>
                 <p>参观重庆中国三峡博物馆，了解三峡历史文化和重庆革命史，感受祖国的伟大变迁。</p>
             </div>
             
             <div class="spot">
-                <h3>南山抗战遗址博物馆</h3>
+                <div class="spot-img spot-img-6"></div>
+                <h3>📍 南山抗战遗址博物馆</h3>
                 <p>探访重庆南山抗战遗址，了解抗日战争时期作为战时首都的重庆所承载的历史重任。</p>
             </div>
         </div>
@@ -318,30 +211,27 @@
                 </div>
             </div>
             
-            <div class="image-grid">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop" alt="磁器口古镇">
-                <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=400&h=300&fit=crop" alt="重庆火锅">
-                <img src="https://images.unsplash.com/photo-1605218427368-35b0f99970d4?w=400&h=250&fit=crop" alt="夜景" class="full-width">
-            </div>
-            
             <div class="spot">
-                <h3>磁器口古镇</h3>
+                <div class="spot-img spot-img-7"></div>
+                <h3>📍 磁器口古镇</h3>
                 <p>游览爱国主义教育基地——磁器口古镇，感受红色文化与传统文化的融合，品尝地道重庆美食。</p>
             </div>
             
             <div class="spot">
-                <h3>红岩精神主题分享会</h3>
+                <div class="spot-img spot-img-8"></div>
+                <h3>📍 红岩精神主题分享会</h3>
                 <p>组织红色主题分享活动，交流学习心得，传承红色基因，感悟初心使命。</p>
             </div>
             
             <div class="spot">
-                <h3>重庆夜景灯光秀</h3>
+                <div class="spot-img spot-img-1"></div>
+                <h3>📍 重庆夜景灯光秀</h3>
                 <p>夜游两江，欣赏山城独特夜景，回顾革命历程，展望美好未来，为红色之旅画上圆满句号。</p>
             </div>
         </div>
         
         <div class="tips">
-            <h3>实用Tips</h3>
+            <h3>💡 实用Tips</h3>
             <ul>
                 <li>建议穿着舒适的徒步鞋，重庆地形多山</li>
                 <li>带上防晒或多雨装备，根据季节选择</li>
